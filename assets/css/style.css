@@ -20,8 +20,8 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    display: flex;  /* Usar flexbox en el body */
-    flex-direction: column;  /* Coloca los elementos en columna */
+    display: flex;  
+    flex-direction: column;  
 }
 
 input[type="text"],
@@ -63,23 +63,26 @@ ul li {
     background-color: #162b47;
     border-bottom: 1px solid #eee;
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .gasto-info {
     display: flex;
-    gap: 10px; /* Controla el espacio entre el nombre y la descripción */
+    flex-direction: column; 
+    align-items: flex-start; 
 }
 
 .valor-gasto {
-    margin-left: 30px; /* Aumenta la separación entre la descripción y el valor */
-    font-weight: bold; /* Resalta el valor del gasto */
+    margin-left: 0; 
+    text-align: center; 
+    width: 100%; 
 }
+
 
 .botones {
     display: flex;
-    gap: 10px; /* Espaciado entre los botones */
+    gap: 10px; 
 }
 
 
@@ -111,10 +114,10 @@ ul li:last-child {
 .container {
     display: flex;
     gap: 20px; /* Reduce el espacio entre elementos en pantallas más pequeñas */
-    width: 100%; /* Cambia a 100% para que ocupe todo el ancho disponible */
+    width: 100%; 
     align-items: center;
     flex-direction: column;
-    padding: 20px; /* Reduce el padding */
+    padding: 20px; 
     opacity: 0px;
 }
 
@@ -169,7 +172,7 @@ footer p {
 
 @media (max-width: 768px) {
     .title-container p {
-        font-size: 2.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+        font-size: 2.5rem; 
     }
 
     .form-group {
@@ -178,30 +181,30 @@ footer p {
 
     input[type="text"],
     input[type="number"] {
-        font-size: 0.9rem; /* Ajusta el tamaño de fuente */
+        font-size: 0.9rem; 
     }
 
     button {
-        font-size: 1rem; /* Ajusta el tamaño de los botones */
-        padding: 8px 20px; /* Ajusta el padding */
+        font-size: 1rem; 
+        padding: 8px 20px; 
     }
 }
 
 @media (max-width: 480px) {
     .title-container p {
-        font-size: 2rem; /* Reduce aún más el tamaño del texto */
+        font-size: 2rem; 
     }
 
     .form-group {
-        width: 90%; /* Aumenta el ancho en pantallas aún más pequeñas */
+        width: 90%; 
     }
 
     button {
-        width: 100%; /* Botones ocupan todo el ancho */
+        width: 100%; 
     }
 
     .gasto-info {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        align-items: flex-start; /* Alinea los elementos a la izquierda */
+        flex-direction: column; 
+        align-items: flex-start; 
     }
 }
