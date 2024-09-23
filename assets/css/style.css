@@ -10,7 +10,6 @@ font-weight: 700;
 font-style: normal;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     background: url('../img/fondo.webp'), linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
@@ -21,6 +20,8 @@ body {
     margin: 0;
     padding: 0;
     color: white;
+    display: flex;  /* Usar flexbox en el body */
+    flex-direction: column;  /* Coloca los elementos en columna */
 }
 
 input[type="text"],
@@ -87,6 +88,7 @@ ul li:last-child {
 }
 
 .main-container {
+    flex: 1;
     display: flex;
     justify-content: center;
     top: 110px;
@@ -102,15 +104,17 @@ ul li:last-child {
     color: white;
     box-shadow: 4px 4px 20px 0px #03244126;
     border: 1px solid #0d478f;
+    width: 90%; /* Cambia el ancho a un porcentaje para que sea más responsivo */
+    max-width: 1200px; /* Establece un ancho máximo */
 }
 
 .container {
     display: flex;
-    gap: 45px;
-    width: 860px;
+    gap: 20px; /* Reduce el espacio entre elementos en pantallas más pequeñas */
+    width: 100%; /* Cambia a 100% para que ocupe todo el ancho disponible */
     align-items: center;
     flex-direction: column;
-    padding: 45px;
+    padding: 20px; /* Reduce el padding */
     opacity: 0px;
 }
 
@@ -142,4 +146,62 @@ ul li:last-child {
     font-weight: bold;
     text-align: center;
     color: #2d1953;
+}
+
+footer {
+    background-color: rgba(4, 24, 50, 0.4); 
+    color: white;  
+    text-align: center; 
+    padding: 10px 0;  
+    width: 100%;  
+    font-size: 1rem;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    bottom: 0; 
+}
+
+footer p {
+    margin: 0; 
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .title-container p {
+        font-size: 2.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+    .form-group {
+        width: 80%; /* Aumenta el ancho en pantallas pequeñas */
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        font-size: 0.9rem; /* Ajusta el tamaño de fuente */
+    }
+
+    button {
+        font-size: 1rem; /* Ajusta el tamaño de los botones */
+        padding: 8px 20px; /* Ajusta el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .title-container p {
+        font-size: 2rem; /* Reduce aún más el tamaño del texto */
+    }
+
+    .form-group {
+        width: 90%; /* Aumenta el ancho en pantallas aún más pequeñas */
+    }
+
+    button {
+        width: 100%; /* Botones ocupan todo el ancho */
+    }
+
+    .gasto-info {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
 }
